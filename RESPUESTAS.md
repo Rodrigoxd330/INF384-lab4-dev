@@ -81,8 +81,8 @@ Cambios para cumplir el presupuesto:
 | Cambio | Job | Minutos recuperados |
 |Mover la prueba de carga fuera del pipeline obligatorio de main y ejecutarla de forma independiente|load|12:00|
 
-Total resultante: [ 7] min
-Link al run en main con los cambios: 
+Total resultante: [ 2] min
+Link al run en main con los cambios: https://github.com/Rodrigoxd330/INF384-lab4-dev/actions/runs/40969974883
 
 Riesgo aceptado (defecto de la aplicación concreto y efecto en la métrica DORA asignada):
 Al retirar load del pipeline obligatorio de main se acepta el riesgo de desplegar una regresión de rendimiento que no sea detectada por las demás pruebas. Un defecto concreto sería que una modificación en la lógica de /transferir aumente considerablemente su tiempo de respuesta, por ejemplo llevando su p95 desde los aproximadamente 52.62 ms observados hasta varios cientos de milisegundos, sin alterar el resultado funcional de la operación.
