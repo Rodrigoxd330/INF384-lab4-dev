@@ -14,7 +14,8 @@ export const options = {
     { duration: '1m', target: 0 },
   ],
   thresholds: {
-    http_req_duration: [`p(95)<${SLO_P95}`],
+    'http_req_duration{endpoint:transferir}': [`p(95)<${SLO_P95}`],
+    'http_req_duration{endpoint:saldo}': [`p(95)<${SLO_P95}`],
     http_req_failed: ['rate<0.01'],
     checks: ['rate>0.99'],
   },

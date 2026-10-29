@@ -28,11 +28,11 @@ Presupuesto: [ 8 ] min  Métrica DORA: [ Change Failure Rate ]
 - Corrección (una o más: mover de etapa / dejar como informativo / eliminar / ajustar configuración / modificar tests): Definir la variable expected commit
 - Evidencia (dato observado, con link al run o fragmento de la salida local): Al ejecutar el pipeline se puede ver en los logs que los pasos debajo de la condicional nunca son ejecutados.
 ### Defecto 5
-- Job y etapa:
-- Problema que causa en el pipeline:
+- Job y etapa: load
+- Problema que causa en el pipeline: No se está midiendo correctamente el tiempo de respuesta, pues se toma un valor global para las ejecuciones (sumándose entre si)
 - Link al commit:
-- Corrección (una o más: mover de etapa / dejar como informativo / eliminar / ajustar configuración / modificar tests):
-- Evidencia (dato observado, con link al run o fragmento de la salida local):
+- Corrección (una o más: mover de etapa / dejar como informativo / eliminar / ajustar configuración / modificar tests): Medir tiempo por separado
+- Evidencia (dato observado, con link al run o fragmento de la salida local): Se puede evidenciar en los logs que el tiempo de medición es uno solo cuando hay más de 1 request.
 
 ## Parte 2 · Implementación
 - Link al run en verde en main:
