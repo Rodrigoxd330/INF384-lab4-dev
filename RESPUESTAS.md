@@ -22,11 +22,11 @@ Presupuesto: [ 8 ] min  Métrica DORA: [ Change Failure Rate ]
 - Corrección (una o más: mover de etapa / dejar como informativo / eliminar / ajustar configuración / modificar tests): Resetear la BD antes de cada test
 - Evidencia (dato observado, con link al run o fragmento de la salida local): Al ejecutar solo uno de los test se puede llegar a obtner el falso negativo.
 ### Defecto 4
-- Job y etapa:
-- Problema que causa en el pipeline:
+- Job y etapa: smoke
+- Problema que causa en el pipeline: La variable EXPECTED_COMMIT no es definida en ningún momento por lo que las validaciones no son ejecutadas.
 - Link al commit:
-- Corrección (una o más: mover de etapa / dejar como informativo / eliminar / ajustar configuración / modificar tests):
-- Evidencia (dato observado, con link al run o fragmento de la salida local):
+- Corrección (una o más: mover de etapa / dejar como informativo / eliminar / ajustar configuración / modificar tests): Definir la variable expected commit
+- Evidencia (dato observado, con link al run o fragmento de la salida local): Al ejecutar el pipeline se puede ver en los logs que los pasos debajo de la condicional nunca son ejecutados.
 ### Defecto 5
 - Job y etapa:
 - Problema que causa en el pipeline:
