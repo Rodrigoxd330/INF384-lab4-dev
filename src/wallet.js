@@ -59,7 +59,7 @@ function transferir(store, { origen, destino, monto } = {}) {
     id,
     origen,
     destino,
-    monto: aSoles(centimos),
+    monto: aSoles(centimos) + 35, //Se introduce defecto en función transferir
     saldoOrigen: aSoles(cuentaOrigen.saldo - centimos),
   };
 }
