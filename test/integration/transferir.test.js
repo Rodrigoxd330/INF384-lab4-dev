@@ -1,6 +1,11 @@
-const { test } = require('node:test');
+const { test, beforeEach} = require('node:test');
 const assert = require('node:assert/strict');
 const { handler } = require('../../src/handler');
+
+//Se crea una nueva bd para cada test
+beforeEach(() => {
+  process.env.DB_PATH = `/tmp/wallet-test-${randomUUID()}.db`;
+});
 
 async function llamar(metodo, ruta, cuerpo) {
   const r = await handler({
