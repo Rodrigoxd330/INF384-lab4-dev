@@ -85,6 +85,7 @@ jobs:
               package-lock.json
 
   build-push:
+    if: github.event_name != 'pull_request'
     needs: [unit, integration, sast, sca]
     runs-on: ubuntu-24.04
     outputs:

@@ -4,17 +4,17 @@ Presupuesto: [ 8 ] min  Métrica DORA: [ Change Failure Rate ]
 
 ## Parte 1 · Diagnóstico
 ### Defecto 1
-- Job y etapa:
-- Problema que causa en el pipeline:
+- Job y etapa: deploy
+- Problema que causa en el pipeline: El pipeline se ejecuta en cada PR lo que hace que PRs aún no mergeadas salgan a producción
 - Link al commit:
-- Corrección (una o más: mover de etapa / dejar como informativo / eliminar / ajustar configuración / modificar tests):
-- Evidencia (dato observado, con link al run o fragmento de la salida local):
+- Corrección (una o más: mover de etapa / dejar como informativo / eliminar / ajustar configuración / modificar tests): Se podría hacer una condicional que si es PR entonces ya no se ejecute el deploy
+- Evidencia (dato observado, con link al run o fragmento de la salida local): Una pipeline ejecutado por una PR que en el cual 'deploy' se ejecute.
 ### Defecto 2
-- Job y etapa:
-- Problema que causa en el pipeline:
+- Job y etapa: Smokey
+- Problema que causa en el pipeline: Smoke y Deploy llegan a ejecutarse en paralelo, lo cual indica que Smoke apunta a la versión anterior.
 - Link al commit:
-- Corrección (una o más: mover de etapa / dejar como informativo / eliminar / ajustar configuración / modificar tests):
-- Evidencia (dato observado, con link al run o fragmento de la salida local):
+- Corrección (una o más: mover de etapa / dejar como informativo / eliminar / ajustar configuración / modificar tests): Hacae que smoke y deploy sean secuenciales
+- Evidencia (dato observado, con link al run o fragmento de la salida local): Ver en el pipeline que smoke termine antes de deploy, esto indica que se está leyendo la versión anterior
 ### Defecto 3
 - Job y etapa:
 - Problema que causa en el pipeline:
